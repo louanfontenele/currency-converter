@@ -1,336 +1,301 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Conversão de Moedas - Ferramenta de Câmbio Precisa</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conversão de Moedas - Ferramenta de Câmbio Precisa</title>
+    <meta name="description" content="Converta moedas com taxas de câmbio atualizadas de forma rápida e precisa. Ideal para quem precisa de informações financeiras em tempo real." />
+    <meta name="keywords" content="conversão de moedas, taxa de câmbio, conversor, finanças, dólar, euro, libra, iene, rupia" />
+    <link rel="canonical" href="https://seusite.com/conversao-de-moedas" />
 
-  <!-- SEO / Metadados -->
-  <meta name="description" content="Converta moedas com taxas de câmbio atualizadas de forma rápida e precisa." />
-  <meta name="keywords" content="conversão de moedas, taxa de câmbio, conversor, finanças, dólar, euro, libra, iene, rupia" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Conversão de Moedas - Ferramenta de Câmbio Precisa" />
+    <meta property="og:description" content="Converta moedas com taxas de câmbio atualizadas de forma rápida e precisa." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://seusite.com/conversao-de-moedas" />
+    <meta property="og:image" content="https://seusite.com/imagem-de-capa.png" />
 
-  <!-- Tailwind CSS & DaisyUI -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Conversão de Moedas - Ferramenta de Câmbio Precisa" />
+    <meta name="twitter:description" content="Converta moedas com taxas de câmbio atualizadas de forma rápida e precisa." />
+    <meta name="twitter:image" content="https://seusite.com/imagem-de-capa.png" />
 
-  <!-- FontAwesome (CDN) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-lDFG0M97qEXw2ZyQG8h0WXYplYs6JFlX6UgB1IR29cxkYkq4BQFepW9qj0Hl3L5wWZacVv/6rC6w+z4iK2U6vQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" />
 
-  <!-- Favicon: Emoji 💱 -->
-  <link
-    rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='16'>💱</text></svg>"
-  />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-lDFG0M97qEXw2ZyQG8h0WXYplYs6JFlX6UgB1IR29cxkYkq4BQFepW9qj0Hl3L5wWZacVv/6rC6w+z4iK2U6vQ==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <style>
-    /* Animação de fade para transições */
-    .fade-in {
-      animation: fadeIn 0.3s ease-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
-</head>
-<body class="bg-base-200 text-base-content">
-  <div class="container mx-auto p-6">
-    <div class="card bg-neutral shadow-xl mx-auto max-w-3xl">
-      <div class="card-body">
-        <h1 class="card-title justify-center text-3xl mb-4">Conversão de Moedas</h1>
+    <!-- Favicon: Emoji 💱 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='16'>💱</text></svg>">
 
-        <!-- Tabs -->
-        <div class="tabs justify-center mb-6">
-          <a class="tab tab-bordered tab-active" data-tab="usd">
-            <i class="fa-solid fa-dollar-sign mr-1"></i> Dólar
-          </a>
-          <a class="tab tab-bordered" data-tab="eur">
-            <i class="fa-solid fa-euro-sign mr-1"></i> Euro
-          </a>
-          <a class="tab tab-bordered" data-tab="outro">
-            <i class="fa-solid fa-coins mr-1"></i> Outros
-          </a>
+    <style>
+      /* Animação de fade para transições */
+      .fade-in {
+        animation: fadeIn 0.3s ease-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+    </style>
+  </head>
+  <body class="bg-base-200 text-base-content">
+    <div class="container mx-auto p-6">
+      <div class="card bg-neutral shadow-xl mx-auto max-w-3xl">
+        <div class="card-body">
+          <h1 class="card-title justify-center text-3xl mb-4">Conversão de Moedas</h1>
+          <!-- Tabs -->
+          <div class="tabs justify-center mb-6">
+            <a class="tab tab-bordered tab-active" data-tab="usd">Dólar</a>
+            <a class="tab tab-bordered" data-tab="eur">Euro</a>
+            <a class="tab tab-bordered" data-tab="outro">Outro</a>
+          </div>
+          <!-- Painel Dólar -->
+          <div id="usd" class="tab-content fade-in">
+            <div class="form-control mb-4">
+              <label class="label">
+                <span class="label-text">
+                  <i class="fa-solid fa-dollar-sign mr-2"></i>Valor em Dólar:
+                </span>
+              </label>
+              <input type="number" id="dollarValue" placeholder="Digite o valor em dólar" step="0.01" min="0" class="input input-bordered w-full" />
+            </div>
+            <button class="btn btn-primary w-full mb-6" onclick="calcularConversaoUSD()">Converter</button>
+            <div class="overflow-x-auto">
+              <table class="table w-full">
+                <tbody>
+                  <tr>
+                    <td class="font-bold">VALOR EM DÓLAR</td>
+                    <td id="displayDollar">$0.00</td>
+                    <td class="font-bold">VALOR EM REAL</td>
+                    <td id="displayReal">R$ 0.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" class="text-center font-bold">CONVERSÃO</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">VALOR</td>
+                    <td class="font-bold">IOF (3,38%)</td>
+                    <td class="font-bold">TAXA (4,5%)</td>
+                    <td class="font-bold">VALOR TOTAL</td>
+                  </tr>
+                  <tr>
+                    <td id="valorRealCalc">R$ 0.00</td>
+                    <td id="valorIOF">R$ 0.00</td>
+                    <td id="valorTaxa">R$ 0.00</td>
+                    <td id="valorTotal">R$ 0.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Painel Euro -->
+          <div id="eur" class="tab-content hidden fade-in">
+            <div class="form-control mb-4">
+              <label class="label">
+                <span class="label-text">
+                  <i class="fa-solid fa-euro-sign mr-2"></i>Valor em Euro:
+                </span>
+              </label>
+              <input type="number" id="euroValue" placeholder="Digite o valor em euro" step="0.01" min="0" class="input input-bordered w-full" />
+            </div>
+            <button class="btn btn-primary w-full mb-6" onclick="calcularConversaoEUR()">Converter</button>
+            <div class="overflow-x-auto">
+              <table class="table w-full">
+                <tbody>
+                  <tr>
+                    <td class="font-bold">VALOR EM EURO</td>
+                    <td id="displayEuro">€0.00</td>
+                    <td class="font-bold">VALOR EM REAL</td>
+                    <td id="displayRealEUR">R$ 0.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" class="text-center font-bold">CONVERSÃO</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">VALOR</td>
+                    <td class="font-bold">IOF (3,38%)</td>
+                    <td class="font-bold">TAXA (4,5%)</td>
+                    <td class="font-bold">VALOR TOTAL</td>
+                  </tr>
+                  <tr>
+                    <td id="valorRealCalcEUR">R$ 0.00</td>
+                    <td id="valorIOFEUR">R$ 0.00</td>
+                    <td id="valorTaxaEUR">R$ 0.00</td>
+                    <td id="valorTotalEUR">R$ 0.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Painel Outro -->
+          <div id="outro" class="tab-content hidden fade-in">
+            <div class="form-control mb-4">
+              <label class="label">
+                <span class="label-text">
+                  <i class="fa-solid fa-coins mr-2"></i>Selecione a Moeda:
+                </span>
+              </label>
+              <select id="currencyCode" class="select select-bordered w-full">
+                <!-- Não inclui USD nem EUR -->
+                <option value="GBP" selected>GBP - Libra Esterlina</option>
+                <option value="JPY">JPY - Iene Japonês</option>
+                <option value="AUD">AUD - Dólar Australiano</option>
+                <option value="CAD">CAD - Dólar Canadense</option>
+                <option value="CHF">CHF - Franco Suíço</option>
+                <option value="INR">INR - Rupia Indiana</option>
+                <option value="CNY">CNY - Yuan Chinês</option>
+              </select>
+            </div>
+            <div class="form-control mb-4">
+              <label class="label">
+                <span class="label-text">
+                  <i class="fa-solid fa-money-bill-wave mr-2"></i>Valor na Moeda Selecionada:
+                </span>
+              </label>
+              <input type="number" id="otherValue" placeholder="Digite o valor" step="0.01" min="0" class="input input-bordered w-full" />
+            </div>
+            <button class="btn btn-primary w-full mb-6" onclick="calcularConversaoOutro()">Converter</button>
+            <div class="overflow-x-auto">
+              <table class="table w-full">
+                <tbody>
+                  <tr>
+                    <td class="font-bold">VALOR NA MOEDA</td>
+                    <td id="displayOther">0.00</td>
+                    <td class="font-bold">VALOR EM REAL</td>
+                    <td id="displayRealOther">R$ 0.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" class="text-center font-bold">CONVERSÃO</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">VALOR</td>
+                    <td class="font-bold">IOF (3,38%)</td>
+                    <td class="font-bold">TAXA (4,5%)</td>
+                    <td class="font-bold">VALOR TOTAL</td>
+                  </tr>
+                  <tr>
+                    <td id="valorRealCalcOther">R$ 0.00</td>
+                    <td id="valorIOFOther">R$ 0.00</td>
+                    <td id="valorTaxaOther">R$ 0.00</td>
+                    <td id="valorTotalOther">R$ 0.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Fim dos painéis -->
         </div>
-
-        <!-- Painel Dólar -->
-        <div id="usd" class="tab-content fade-in">
-          <div class="form-control mb-4">
-            <label class="label">
-              <span class="label-text">
-                <i class="fa-solid fa-dollar-sign mr-2"></i>Valor em Dólar:
-              </span>
-            </label>
-            <!-- Campo com ícone dentro do input -->
-            <label class="input input-bordered flex items-center gap-2">
-              <input
-                type="number"
-                id="dollarValue"
-                placeholder="Digite o valor em dólar"
-                step="0.01"
-                min="0"
-                class="grow"
-              />
-              <i class="fa-solid fa-dollar-sign text-base opacity-70"></i>
-            </label>
-          </div>
-          <button class="btn btn-primary w-full mb-6" onclick="calcularConversaoUSD()">Converter</button>
-          <div class="overflow-x-auto">
-            <table class="table w-full">
-              <tbody>
-                <tr>
-                  <td class="font-bold">VALOR EM DÓLAR</td>
-                  <td id="displayDollar">$0.00</td>
-                  <td class="font-bold">VALOR EM REAL</td>
-                  <td id="displayReal">R$ 0.00</td>
-                </tr>
-                <tr>
-                  <td colspan="4" class="text-center font-bold">CONVERSÃO</td>
-                </tr>
-                <tr>
-                  <td class="font-bold">VALOR</td>
-                  <td class="font-bold">IOF (3,38%)</td>
-                  <td class="font-bold">TAXA (4,5%)</td>
-                  <td class="font-bold">VALOR TOTAL</td>
-                </tr>
-                <tr>
-                  <td id="valorRealCalc">R$ 0.00</td>
-                  <td id="valorIOF">R$ 0.00</td>
-                  <td id="valorTaxa">R$ 0.00</td>
-                  <td id="valorTotal">R$ 0.00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Painel Euro -->
-        <div id="eur" class="tab-content hidden fade-in">
-          <div class="form-control mb-4">
-            <label class="label">
-              <span class="label-text">
-                <i class="fa-solid fa-euro-sign mr-2"></i>Valor em Euro:
-              </span>
-            </label>
-            <label class="input input-bordered flex items-center gap-2">
-              <input
-                type="number"
-                id="euroValue"
-                placeholder="Digite o valor em euro"
-                step="0.01"
-                min="0"
-                class="grow"
-              />
-              <i class="fa-solid fa-euro-sign text-base opacity-70"></i>
-            </label>
-          </div>
-          <button class="btn btn-primary w-full mb-6" onclick="calcularConversaoEUR()">Converter</button>
-          <div class="overflow-x-auto">
-            <table class="table w-full">
-              <tbody>
-                <tr>
-                  <td class="font-bold">VALOR EM EURO</td>
-                  <td id="displayEuro">€0.00</td>
-                  <td class="font-bold">VALOR EM REAL</td>
-                  <td id="displayRealEUR">R$ 0.00</td>
-                </tr>
-                <tr>
-                  <td colspan="4" class="text-center font-bold">CONVERSÃO</td>
-                </tr>
-                <tr>
-                  <td class="font-bold">VALOR</td>
-                  <td class="font-bold">IOF (3,38%)</td>
-                  <td class="font-bold">TAXA (4,5%)</td>
-                  <td class="font-bold">VALOR TOTAL</td>
-                </tr>
-                <tr>
-                  <td id="valorRealCalcEUR">R$ 0.00</td>
-                  <td id="valorIOFEUR">R$ 0.00</td>
-                  <td id="valorTaxaEUR">R$ 0.00</td>
-                  <td id="valorTotalEUR">R$ 0.00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Painel Outros -->
-        <div id="outro" class="tab-content hidden fade-in">
-          <div class="form-control mb-4">
-            <label class="label">
-              <span class="label-text">
-                <i class="fa-solid fa-coins mr-2"></i>Selecione a Moeda:
-              </span>
-            </label>
-            <select id="currencyCode" class="select select-bordered w-full">
-              <option value="GBP" selected>GBP - Libra Esterlina</option>
-              <option value="JPY">JPY - Iene Japonês</option>
-              <option value="AUD">AUD - Dólar Australiano</option>
-              <option value="CAD">CAD - Dólar Canadense</option>
-              <option value="CHF">CHF - Franco Suíço</option>
-              <option value="INR">INR - Rupia Indiana</option>
-              <option value="CNY">CNY - Yuan Chinês</option>
-            </select>
-          </div>
-          <div class="form-control mb-4">
-            <label class="label">
-              <span class="label-text">
-                <i class="fa-solid fa-money-bill-wave mr-2"></i>Valor na Moeda Selecionada:
-              </span>
-            </label>
-            <label class="input input-bordered flex items-center gap-2">
-              <input
-                type="number"
-                id="otherValue"
-                placeholder="Digite o valor"
-                step="0.01"
-                min="0"
-                class="grow"
-              />
-              <i class="fa-solid fa-money-bill-wave text-base opacity-70"></i>
-            </label>
-          </div>
-          <button class="btn btn-primary w-full mb-6" onclick="calcularConversaoOutro()">Converter</button>
-          <div class="overflow-x-auto">
-            <table class="table w-full">
-              <tbody>
-                <tr>
-                  <td class="font-bold">VALOR NA MOEDA</td>
-                  <td id="displayOther">0.00</td>
-                  <td class="font-bold">VALOR EM REAL</td>
-                  <td id="displayRealOther">R$ 0.00</td>
-                </tr>
-                <tr>
-                  <td colspan="4" class="text-center font-bold">CONVERSÃO</td>
-                </tr>
-                <tr>
-                  <td class="font-bold">VALOR</td>
-                  <td class="font-bold">IOF (3,38%)</td>
-                  <td class="font-bold">TAXA (4,5%)</td>
-                  <td class="font-bold">VALOR TOTAL</td>
-                </tr>
-                <tr>
-                  <td id="valorRealCalcOther">R$ 0.00</td>
-                  <td id="valorIOFOther">R$ 0.00</td>
-                  <td id="valorTaxaOther">R$ 0.00</td>
-                  <td id="valorTotalOther">R$ 0.00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <!-- Fim dos painéis -->
       </div>
     </div>
-  </div>
 
-  <script>
-    // Alterna entre os painéis via tabs
-    const tabElements = document.querySelectorAll('.tab');
-    const tabContents = document.querySelectorAll('.tab-content');
-    tabElements.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabElements.forEach(t => t.classList.remove('tab-active'));
-        tab.classList.add('tab-active');
-        const target = tab.getAttribute('data-tab');
-        tabContents.forEach(content => {
-          if (content.id === target) {
-            content.classList.remove('hidden');
-          } else {
-            content.classList.add('hidden');
-          }
+    <script>
+      // Alterna entre os painéis via tabs
+      const tabElements = document.querySelectorAll('.tab');
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabElements.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabElements.forEach(t => t.classList.remove('tab-active'));
+          tab.classList.add('tab-active');
+          const target = tab.getAttribute('data-tab');
+          tabContents.forEach(content => {
+            if (content.id === target) {
+              content.classList.remove('hidden');
+            } else {
+              content.classList.add('hidden');
+            }
+          });
         });
       });
-    });
 
-    // Função para obter a taxa de câmbio para uma moeda em relação ao BRL
-    async function getExchangeRate(currency) {
-      try {
-        const response = await fetch(`https://economia.awesomeapi.com.br/json/last/${currency}-BRL`);
-        const data = await response.json();
-        const pair = `${currency}BRL`;
-        return parseFloat(data[pair].bid);
-      } catch (error) {
-        console.error(`Erro na taxa ${currency}:`, error);
-        alert(`Não foi possível obter a taxa de câmbio ${currency}.`);
-        return null;
+      // Função para obter a taxa de câmbio para uma moeda em relação ao BRL
+      async function getExchangeRate(currency) {
+        try {
+          const response = await fetch(`https://economia.awesomeapi.com.br/json/last/${currency}-BRL`);
+          const data = await response.json();
+          const pair = `${currency}BRL`;
+          return parseFloat(data[pair].bid);
+        } catch (error) {
+          console.error(`Erro na taxa ${currency}:`, error);
+          alert(`Não foi possível obter a taxa de câmbio ${currency}.`);
+          return null;
+        }
       }
-    }
 
-    // Conversão para Dólar
-    async function calcularConversaoUSD() {
-      const usdInput = document.getElementById('dollarValue').value;
-      const usdValue = parseFloat(usdInput);
-      if (isNaN(usdValue) || usdValue <= 0) {
-        alert('Insira um valor válido em dólar.');
-        return;
+      // Conversão para Dólar
+      async function calcularConversaoUSD() {
+        const usdInput = document.getElementById('dollarValue').value;
+        const usdValue = parseFloat(usdInput);
+        if (isNaN(usdValue) || usdValue <= 0) {
+          alert('Insira um valor válido em dólar.');
+          return;
+        }
+        const rate = await getExchangeRate('USD');
+        if (!rate) return;
+        const valorReal = usdValue * rate;
+        const iof = valorReal * 0.0338;
+        const taxa = valorReal * 0.045;
+        const valorTotal = valorReal + iof + taxa;
+        
+        document.getElementById('displayDollar').textContent = '$' + usdValue.toFixed(2);
+        document.getElementById('displayReal').textContent = 'R$ ' + valorReal.toFixed(2);
+        document.getElementById('valorRealCalc').textContent = 'R$ ' + valorReal.toFixed(2);
+        document.getElementById('valorIOF').textContent = 'R$ ' + iof.toFixed(2);
+        document.getElementById('valorTaxa').textContent = 'R$ ' + taxa.toFixed(2);
+        document.getElementById('valorTotal').textContent = 'R$ ' + valorTotal.toFixed(2);
       }
-      const rate = await getExchangeRate('USD');
-      if (!rate) return;
-      const valorReal = usdValue * rate;
-      const iof = valorReal * 0.0338;
-      const taxa = valorReal * 0.045;
-      const valorTotal = valorReal + iof + taxa;
-      
-      document.getElementById('displayDollar').textContent = '$' + usdValue.toFixed(2);
-      document.getElementById('displayReal').textContent = 'R$ ' + valorReal.toFixed(2);
-      document.getElementById('valorRealCalc').textContent = 'R$ ' + valorReal.toFixed(2);
-      document.getElementById('valorIOF').textContent = 'R$ ' + iof.toFixed(2);
-      document.getElementById('valorTaxa').textContent = 'R$ ' + taxa.toFixed(2);
-      document.getElementById('valorTotal').textContent = 'R$ ' + valorTotal.toFixed(2);
-    }
 
-    // Conversão para Euro
-    async function calcularConversaoEUR() {
-      const eurInput = document.getElementById('euroValue').value;
-      const eurValue = parseFloat(eurInput);
-      if (isNaN(eurValue) || eurValue <= 0) {
-        alert('Insira um valor válido em euro.');
-        return;
+      // Conversão para Euro
+      async function calcularConversaoEUR() {
+        const eurInput = document.getElementById('euroValue').value;
+        const eurValue = parseFloat(eurInput);
+        if (isNaN(eurValue) || eurValue <= 0) {
+          alert('Insira um valor válido em euro.');
+          return;
+        }
+        const rate = await getExchangeRate('EUR');
+        if (!rate) return;
+        const valorReal = eurValue * rate;
+        const iof = valorReal * 0.0338;
+        const taxa = valorReal * 0.045;
+        const valorTotal = valorReal + iof + taxa;
+        
+        document.getElementById('displayEuro').textContent = '€' + eurValue.toFixed(2);
+        document.getElementById('displayRealEUR').textContent = 'R$ ' + valorReal.toFixed(2);
+        document.getElementById('valorRealCalcEUR').textContent = 'R$ ' + valorReal.toFixed(2);
+        document.getElementById('valorIOFEUR').textContent = 'R$ ' + iof.toFixed(2);
+        document.getElementById('valorTaxaEUR').textContent = 'R$ ' + taxa.toFixed(2);
+        document.getElementById('valorTotalEUR').textContent = 'R$ ' + valorTotal.toFixed(2);
       }
-      const rate = await getExchangeRate('EUR');
-      if (!rate) return;
-      const valorReal = eurValue * rate;
-      const iof = valorReal * 0.0338;
-      const taxa = valorReal * 0.045;
-      const valorTotal = valorReal + iof + taxa;
-      
-      document.getElementById('displayEuro').textContent = '€' + eurValue.toFixed(2);
-      document.getElementById('displayRealEUR').textContent = 'R$ ' + valorReal.toFixed(2);
-      document.getElementById('valorRealCalcEUR').textContent = 'R$ ' + valorReal.toFixed(2);
-      document.getElementById('valorIOFEUR').textContent = 'R$ ' + iof.toFixed(2);
-      document.getElementById('valorTaxaEUR').textContent = 'R$ ' + taxa.toFixed(2);
-      document.getElementById('valorTotalEUR').textContent = 'R$ ' + valorTotal.toFixed(2);
-    }
 
-    // Conversão para "Outros" - moeda selecionada pelo usuário
-    async function calcularConversaoOutro() {
-      const currency = document.getElementById('currencyCode').value;
-      const otherInput = document.getElementById('otherValue').value;
-      const otherValue = parseFloat(otherInput);
-      if (isNaN(otherValue) || otherValue <= 0) {
-        alert('Insira um valor válido na moeda selecionada.');
-        return;
+      // Conversão para "Outro" - moeda selecionada pelo usuário
+      async function calcularConversaoOutro() {
+        const currency = document.getElementById('currencyCode').value;
+        const otherInput = document.getElementById('otherValue').value;
+        const otherValue = parseFloat(otherInput);
+        if (isNaN(otherValue) || otherValue <= 0) {
+          alert('Insira um valor válido na moeda selecionada.');
+          return;
+        }
+        const rate = await getExchangeRate(currency);
+        if (!rate) return;
+        const valorReal = otherValue * rate;
+        const iof = valorReal * 0.0338;
+        const taxa = valorReal * 0.045;
+        const valorTotal = valorReal + iof + taxa;
+        
+        document.getElementById('displayOther').textContent = otherValue.toFixed(2) + ' ' + currency;
+        document.getElementById('displayRealOther').textContent = 'R$ ' + valorReal.toFixed(2);
+        document.getElementById('valorRealCalcOther').textContent = 'R$ ' + valorReal.toFixed(2);
+        document.getElementById('valorIOFOther').textContent = 'R$ ' + iof.toFixed(2);
+        document.getElementById('valorTaxaOther').textContent = 'R$ ' + taxa.toFixed(2);
+        document.getElementById('valorTotalOther').textContent = 'R$ ' + valorTotal.toFixed(2);
       }
-      const rate = await getExchangeRate(currency);
-      if (!rate) return;
-      const valorReal = otherValue * rate;
-      const iof = valorReal * 0.0338;
-      const taxa = valorReal * 0.045;
-      const valorTotal = valorReal + iof + taxa;
-      
-      document.getElementById('displayOther').textContent = otherValue.toFixed(2) + ' ' + currency;
-      document.getElementById('displayRealOther').textContent = 'R$ ' + valorReal.toFixed(2);
-      document.getElementById('valorRealCalcOther').textContent = 'R$ ' + valorReal.toFixed(2);
-      document.getElementById('valorIOFOther').textContent = 'R$ ' + iof.toFixed(2);
-      document.getElementById('valorTaxaOther').textContent = 'R$ ' + taxa.toFixed(2);
-      document.getElementById('valorTotalOther').textContent = 'R$ ' + valorTotal.toFixed(2);
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
