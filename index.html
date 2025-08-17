@@ -238,7 +238,7 @@
         const rate = await getExchangeRate('USD');
         if (!rate) return;
         const valorReal = usdValue * rate;
-        const iof = valorReal * 0.0338;
+        const iof = valorReal * 0.0350;
         const taxa = valorReal * 0.045;
         const valorTotal = valorReal + iof + taxa;
         
@@ -285,7 +285,7 @@
         const rate = await getExchangeRate(currency);
         if (!rate) return;
         const valorReal = otherValue * rate;
-        const iof = valorReal * 0.0338;
+        const iof = valorReal * 0.0350;
         const taxa = valorReal * 0.045;
         const valorTotal = valorReal + iof + taxa;
         
